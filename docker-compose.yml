@@ -1,0 +1,31 @@
+version: '3'
+services:
+  frontend:
+    ports:
+      - 80:80
+    image: ddarahakit2023/frontend:1.0
+    depends_on:
+      - backend
+    environment:
+      BACKEND_URL: backend
+  backend:
+    image: ddarahakit2023/backend:1.0
+    ports:
+      - 8080:8080
+    environment:
+      AWS_ACCESS_KEY: AKIA3DZIPTYG3P5M6MGB
+      AWS_BUCKET_NAME: ddarahakit2023-s3
+      AWS_REGION_NAME: ap-northeast-2
+      AWS_SECRET_KEY: M86PlLeIKTwfnbpKcR43JSaNOUzy8cVIlasyeQVW
+      DB_DRIVER_CLASS_NAME: com.mysql.cj.jdbc.Driver
+      DB_USERNAME: admin
+      DB_PASSWORD: qwer1234
+      DB_URL: jdbc:mysql://database-1.cx5bjdbvokkc.ap-northeast-2.rds.amazonaws.com:3306/test
+      IAMPORT_KEY: 1156022477706867
+      IAMPORT_SECRET: MVtgCFU216ST9iyajBp6z01jSl1SPnZgdMMQUJIHtQOXe5pJ1oWpuw7SUR58Fcr7icROHUg2NWwXFeaL
+      JWT_EXPIRED_TIME: 18000000
+      JWT_SECRET: abcdefghijklmnopqrstuvwxyz0123456789
+      MAIL_HOST: smtp.gmail.com
+      MAIL_PASSWORD: sfigasrozftvsmnp
+      MAIL_PORT: 587
+      MAIL_USERNAME: ddarahakit2023
